@@ -21,7 +21,7 @@
 ## <a name="es6">ES6新特性</a>
 - 1. ES6有哪些新特性？
 
-参考答案：
+Answer：
 1. 类的支持([class](http://es6.ruanyifeng.com/#docs/class)关键字, 方便OOP)
 2. 模块化([export, import](http://es6.ruanyifeng.com/#docs/module))
 3. 箭头操作符([=>](http://es6.ruanyifeng.com/#docs/function), 函数体内的this对象，就是定义时所在的对象，而不是使用时所在的对象(比较适用于回调函数: [简例](/code-demo/arrow-function.js))。不可以当作构造函数,即不可以使用new命令， 不可以使用arguments对象，该对象在函数体内不存在。如果要用，可以用Rest参数代替。不可以使用yield命令，因此箭头函数不能用作Generator函数。)
@@ -35,17 +35,22 @@
 
 - 2. 你对ES6的个人看法？
 
-参考答案：ES6必火！从软件工程角度来看，以前真的很弱，不适合做大型应用，很容易导致烂尾工程。ES6就相当于当年的Java5,是历史性的发展，从此我们可以用js做大型项目了。事实上，各大主流浏览器现在已经支持大部分新特性了，后端的Node.js更是可以直接使用ES6的绝大多数语法。
+Answer：
+提供了许多新特性或语法糖，但是这些新特性弥补了js许多不足之处，使得js应用在大型应用上更加顺手;
 
-推荐ES6入门好书: [阮一峰 ECMAScript 6入门] (http://es6.ruanyifeng.com/)
+ES6相关书籍: [阮一峰 ECMAScript 6入门] (http://es6.ruanyifeng.com/)
 
 ## <a name="jsAdvanced">javascript高级话题(面向对象，作用域，闭包，设计模式等)</a>
-- 1. 常用js类定义的方法有哪些？  
+- 1. 常用js类定义的方法有哪些？
 
-参考答案：主要有构造函数原型和对象创建两种方法。原型法是通用老方法，对象创建是ES5推荐使用的方法.目前来看，原型法更普遍.  
+Answer：
+1. 构造函数原型（通用的老方法，更加普遍）
+2. 对象创建(ES5推荐)
+3. ES6 class 关键字(个人常用!)
 
-代码演示  
-1) 构造函数方法定义类  
+代码演示:
+1) 构造函数
+
 ```javascript
 	function Person(){
 	  this.name = 'michaelqin';
@@ -57,7 +62,7 @@
 	var person = new Person();
 	person.sayName();
 ```
-2) 对象创建方法定义类  
+2) 对象创建
 ```
 	var Person = {
 	  name: 'michaelqin',
@@ -67,7 +72,19 @@
 	var person = Object.create(Person);
 	person.sayName();
 ```
-- 2. js类继承的方法有哪些  
+
+3) ES6 class 关键字
+```
+  class Person {
+    constructor() {
+      this.name = 'michaelqin';
+    }
+    sayName() {
+      alert(this.name);
+    }
+  }
+```
+- 2. js类继承的方法有哪些
 
 参考答案：原型链法，属性复制法和构造器应用法.  另外，由于每个对象可以是一个类，这些方法也可以用于对象类的继承．
 
