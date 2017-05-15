@@ -556,11 +556,13 @@ Answer: 概念都是一样的，输入，输出，错误，都是流．区别是
 ## <a name="nodeAdvanced">node高级话题(异步，部署，性能调优，异常调试等)</a>  
 - 1. node中的异步和同步怎么理解  
 
-Answer: node是单线程的，异步是通过一次次的循环事件队列来实现的．同步则是说阻塞式的IO,这在高并发环境会是一个很大的性能问题，所以同步一般只在基础框架的启动时使用，用来加载配置文件，初始化程序什么的．   
+Answer:
+1. node是单线程的(一时间只能做一件事)，异步是通过一次次的循环事件队列来实现的(即事件驱动，事件循环).
+2. 同步则是说阻塞式的IO,这在高并发环境会是一个很大的性能问题，所以同步一般只在基础框架的启动时使用，用来加载配置文件，初始化程序什么的．
 
-- 2. 有哪些方法可以进行异步流程的控制?  
+- 2. 有哪些方法可以进行异步流程的控制?
 
-Answer: 1) 多层嵌套回调 2)　为每一个回调写单独的函数，函数里边再回调 3) 用第三方框架比方async, q, promise等   
+Answer: 1) 多层嵌套回调 2)　为每一个回调写单独的函数，函数里边再回调 3) 用第三方框架比方async, q, promise等
 
 - 3. 怎样绑定node程序到80端口?  
 
@@ -568,15 +570,15 @@ Answer:  多种方式 1) sudo 2) apache/nginx代理 3) 用操作系统的firewal
 
 - 4. 有哪些方法可以让node程序遇到错误后自动重启?
 
-Answer: 1) runit 2) forever 3) nohup npm start &       
+Answer: 1) runit 2) forever 3) nohup npm start &
 
 - 5. 怎样充分利用多个CPU?
 
-Answer: 一个CPU运行一个node实例      
+Answer: 一个CPU运行一个node实例(cluster)
 
 - 6. 怎样调节node执行单元的内存大小?
 
-Answer: 用--max-old-space-size 和 --max-new-space-size 来设置 v8 使用内存的上限        
+Answer: 用--max-old-space-size 和 --max-new-space-size 来设置 v8 使用内存的上限
 
 - 7. 程序总是崩溃，怎样找出问题在哪里?
 
@@ -584,17 +586,20 @@ Answer: 1) node --prof 查看哪些函数调用次数多 2) memwatch和heapdump�
 
 - 8. 有哪些常用方法可以防止程序崩溃?
 
-Answer: 1) try-catch-finally 2) EventEmitter/Stream error事件处理 3) domain统一控制 4) jshint静态检查 5) jasmine/mocha进行单元测试        
+Answer: 1) try-catch-finally 2) EventEmitter/Stream error事件处理 3) domain统一控制 4) jshint静态检查 5) jasmine/mocha进行单元测试
 
 - 9. 怎样调试node程序?
 
 Answer:  node --debug app.js 和node-inspector
 
 
-## <a name="node3rd">常用知名第三方类库(Async, Express等)</a>  
-- 1. async都有哪些常用方法，分别是怎么用?  
+## <a name="node3rd">常用知名第三方类库(Async, Express等)</a>
+- 1. async都有哪些常用方法，分别是怎么用?
 
-Answer: async是一个js类库，它的目的是解决js中异常流程难以控制的问题．async不仅适用在node.js里，浏览器中也可以使用．
+Answer: 
+1. async是一个js类库，它的目的是解决js中异常流程难以控制的问题．
+2. async不仅适用在node.js里，浏览器中也可以使用．
+2. async适用于回调函数式的异步，promise形式的可以用bluebird
 1) async.parallel并行执行完多个函数后，调用结束函数
 ```javascript
 	async.parallel([
@@ -658,17 +663,17 @@ Answer: /users/:name使用req.params.name来获取; req.body.username则是获�
 - 5. express response有哪些常用方法
 
 Answer:
-res.download()	弹出文件下载  
-res.end()	结束response  
-res.json()	返回json  
-res.jsonp()	返回jsonp  
-res.redirect()	重定向请求  
-res.render()	渲染模板  
-res.send()	返回多种形式数据  
-res.sendFile	返回文件  
-res.sendStatus()	返回状态  
+res.download() 弹出文件下载
+res.end() 结束response
+res.json() 返回json
+res.jsonp() 返回jsonp(与json区别：JSON是一种数据交换格式，而JSONP是一种非官方跨域数据交互协议。)
+res.redirect() 重定向请求
+res.render() 渲染模板
+res.send() 返回多种形式数据
+res.sendFile 返回文件
+res.sendStatus() 返回状态
 
-## <a name="otherBackend">其它相关后端常用技术(MongoDB, Redis, Apache, Nginx等)</a>      
+## <a name="otherBackend">其它相关后端常用技术(MongoDB, Redis, Apache, Nginx等)</a>
 
 - 1. mongodb有哪些常用优化措施
 
@@ -686,14 +691,14 @@ Answer: set/get, mset/hset/hmset/hmget/hgetall/hkeys, sadd/smembers, publish/sub
 
 Answer:
 ```javascript
-	var redis = require("redis"),
-	  client = redis.createClient();
+var redis = require("redis"),
+  client = redis.createClient();
 
-	client.set("foo_rand000000000000", "some fantastic value");
-	client.get("foo_rand000000000000", function (err, reply) {
-	  console.log(reply.toString());
-	});
-	client.end();
+client.set("foo_rand000000000000", "some fantastic value");
+client.get("foo_rand000000000000", function (err, reply) {
+  console.log(reply.toString());
+});
+client.end();
 ```
 
 - 4. apache,nginx有什么区别?
