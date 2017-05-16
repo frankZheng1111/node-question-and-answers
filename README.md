@@ -323,35 +323,44 @@ publisher.notify('2 subscribers will both perform process'); // 发布一个字�
 
 Answer: push/pop, shift/unshift, split/join, slice/splice/concat, sort/reverse, map/reduce, forEach, filter
 
-- 12. 列举字符串相关的常用方法  
+- 12. 列举字符串相关的常用方法
 
 Answer: indexOf/lastIndexOf/charAt, split/match/test, slice/substring/substr, toLowerCase/toUpperCase
 
 ## <a name="nodeCore">node核心内置类库(事件，流，文件，网络等)</a>
 ### node概览
 
-- 1. 为什么要用node?  
+- 1. 为什么要用node?
 
 Answer:  总结起来node有以下几个特点:简单强大，轻量可扩展．简单体现在node使用的是javascript,json来进行编码，人人都会；强大体现在非阻塞IO,可以适应分块传输数据，较慢的网络环境，尤其擅长高并发访问；轻量体现在node本身既是代码，又是服务器，前后端使用统一语言;可扩展体现在可以轻松应对多实例，多服务器架构，同时有海量的第三方应用组件．
 
-- 2. node的构架是什么样子的?  
+- 2. node的构架是什么样子的?
 
 Answer: 主要分为三层，应用app >> V8及node内置架构 >> 操作系统. V8是node运行的环境，可以理解为node虚拟机．node内置架构又可分为三层: 核心模块(javascript实现) >> c++绑定 >> libuv + CAes + http.
 
 <img src="http://joaopsilva.github.io/talks/End-to-End-JavaScript-with-the-MEAN-Stack/img/nodejs-arch-ppt.png" alt="">
 
-- 3. node有哪些核心模块?  
+- 3. node有哪些核心模块?
 
 Answer:  EventEmitter, Stream, FS, Net和全局对象
 
 ### node全局对象
-- 1. node有哪些全局对象?  
+- 1. node有哪些全局对象?
 
 Answer: process, console, Buffer和exports
 
-- 2. process有哪些常用方法?  
+- 2. process有哪些常用方法?
 
-Answer: process.stdin, process.stdout, process.stderr, process.on, process.env, process.argv, process.arch, process.platform, process.exit
+Answer: [范例代码](code-demo/process.js)
+1. process.stdin()(标准输入, 用于命令行输入)
+2. process.stdout(指向系统标准输出，write方法等同于console.log)
+3. process.stderr(指向标准错误, 文件描述2)
+4. process.on(事件监听)
+5. process.env(当前环境变量)
+6. process.argv(命令行参数)
+7. process.arch(cpu架构,例如: x64)
+8. process.platform(平台)
+9. process.exit(退出当前进程)
 
 - 3. console有哪些常用方法?  
 
