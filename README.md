@@ -203,17 +203,24 @@ Answer:
 
 代码演示
 ```javascript
-function parent(param1, param2, param3) {
-  child(param1, param2, param3);
+// 'use strict' 严格模式无法使用
+function parent() {
+  child();
 }
 
 function child() {
-  console.log(arguments); // { '0': 'mqin1', '1': 'mqin2', '2': 'mqin3' }
-  console.log(arguments.callee); // [Function: child]
-  console.log(child.caller); // [Function: parent]
+  console.log(arguments.callee);
+  console.log(child.caller); 
 }
 
-parent('mqin1', 'mqin2', 'mqin3');
+parent();
+// [Function: child]
+// [Function: parent]
+
+child();
+// [Function: child]
+// [Function]
+
 ```
 - 8. 什么是闭包，闭包有哪些用处?
 
