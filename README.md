@@ -1,7 +1,7 @@
 # node-questions&answers
 - 主要来源/参考：[https://github.com/jimuyouyou/node-interview-questions](https://github.com/jimuyouyou/node-interview-questions)
 - Node相关知识点，侧重于后端应用与对Node核心的理解。
-- 相较于 Fork 来的原文精炼了一些内容，添加了一些细节，便于自己理解
+- 相较于拷贝来的原文精炼了一些内容，添加了一些细节，便于自己理解
 
 # node开发技能图解  
 <img src="node_skillset.jpg" alt="">
