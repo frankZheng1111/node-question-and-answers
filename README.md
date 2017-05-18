@@ -362,23 +362,23 @@ Answer: [范例代码](code-demo/process.js)
 8. process.platform(平台)
 9. process.exit(退出当前进程)
 
-- 3. console有哪些常用方法?  
+- 3. console有哪些常用方法?
 
 Answer: console.log/console.info, console.error/console.warning, console.time/console.timeEnd, console.trace, console.table
 
-- 4. node有哪些定时功能?  
+- 4. node有哪些定时功能?
 
-Answer: setTimeout/clearTimeout, setInterval/clearInterval, setImmediate/clearImmediate, process.nextTick   
+Answer: setTimeout/clearTimeout, setInterval/clearInterval, setImmediate/clearImmediate, process.nextTick
 
-- 5. node中的事件循环是什么样子的?  
+- 5. node中的事件循环是什么样子的?
 总体上执行顺序是：process.nextTick >> setImmidate >> setTimeout/SetInterval
 看官网吧：
 https://nodejs.org/en/docs/guides/event-loop-timers-and-nexttick/
 
 
-- 6. node中的Buffer如何应用?  
+- 6. node中的Buffer如何应用?
 
-Answer: Buffer是用来处理二进制数据的，比如图片，mp3,数据库文件等.Buffer支持各种编码解码，二进制字符串互转．      
+Answer: Buffer是用来处理二进制数据的，比如图片，mp3,数据库文件等.Buffer支持各种编码解码，二进制字符串互转．
 
 ### EventEmitter
 - 1. 什么是EventEmitter?  
