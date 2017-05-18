@@ -91,6 +91,7 @@ Answer：
 1. 原型链法
 2. 属性复制法
 3. 构造器应用法
+4. util模块：util.inherits(子类, 父类)
 
 另外，由于每个对象可以是一个类，这些方法也可以用于对象类的继承．
 
@@ -381,7 +382,7 @@ https://nodejs.org/en/docs/guides/event-loop-timers-and-nexttick/
 Answer: Buffer是用来处理二进制数据的，比如图片，mp3,数据库文件等.Buffer支持各种编码解码，二进制字符串互转．
 
 ### EventEmitter
-- 1. 什么是EventEmitter?  
+- 1. 什么是EventEmitter?
 
 Answer: EventEmitter是node中一个实现观察者模式的类，主要功能是监听和发射消息，用于处理多模块交互问题.
 
