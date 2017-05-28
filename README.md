@@ -603,7 +603,7 @@ Answer: 一个CPU运行一个node实例(cluster)
 
 - 6. 怎样调节node执行单元的内存大小?
 
-Answer: 用--max-old-space-size 和 --max-new-space-size 来设置 v8 使用内存的上限
+Answer: 用--max-old-space-size 和 --max-new-space-size 来设置 v8 使用内存的上限[参考](http://www.tuicool.com/articles/miU3e2)
 
 - 7. 程序总是崩溃，怎样找出问题在哪里?
 
