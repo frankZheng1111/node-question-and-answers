@@ -96,7 +96,7 @@ Answer：
 另外，由于每个对象可以是一个类，这些方法也可以用于对象类的继承．
 
 代码演示
-1) 原型链法
+1) 原型链法(缺点：子类重写同名方法会影响父类)
 ```javascript
 function Animal() {
   this.name = 'animal';
@@ -125,7 +125,7 @@ for(prop in Animal.prototype) {
 } // 复制动物的所有属性到人量边
 Person.prototype.constructor = 'Person'; // 更新构造函数为人
 ```
-3) 构造器应用法
+3) 构造器应用法(原型链上的属性/方法没有被继承，需要将要被继承的内容写入构造器)
 ```javascript
 function Animal() {
   this.name = 'animal';
