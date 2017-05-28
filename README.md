@@ -193,7 +193,6 @@ Person.prototype.sayName.call(obj, param1, param2, param3);
 
 // bind
 var sn = Person.prototype.sayName.bind(obj);
-sn([param1, param2, param3]); // bind需要先绑定，再执行
 sn(param1, param2, param3); // bind需要先绑定，再执行
 ```
 - 7. caller, callee和arguments分别是什么?

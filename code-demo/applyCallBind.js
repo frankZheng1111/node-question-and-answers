@@ -2,7 +2,7 @@
 
 function Person() {
 }
-Person.prototype.sayName = function (arg) { console.log(this.name, arg); }
+Person.prototype.sayName = function () { console.log(this.name, arguments); }
 
 var obj = {name: 'michaelqin'}; // 注意这是一个普通对象，它不是Person的实例
 // apply
