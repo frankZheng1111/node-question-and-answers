@@ -30,4 +30,4 @@ var b = foo2(5);
 console.log(' start with args ! ')
 console.log(b.next()); // { value:6, done:false }
 console.log(b.next(12)); // { value:8, done:false }
-console.log(b.next(13)); // { value:42, done:true }
+console.log(b.next(13)); // { value:42, done:true } 5 + 12 * 2 + 13 = 42
